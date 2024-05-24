@@ -1,0 +1,51 @@
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+    //float: left;
+    //overflow: hidden;
+    float: right;
+    overflow: visible;
+}
+
+/* Style the dropdown button to fit inside the nav4 */
+.dropdown .dropbtn {
+    border: none;
+    outline: none;
+    color: darkcyan;
+    padding: 8px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    background-color: #fafafa;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    opacity: 100%;
+    position: relative;
+    color: darkcyan;
+    padding: 8px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

@@ -1,0 +1,70 @@
+$color0: #1890ff;
+$color1: #2299ff;
+
+.sidebar {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: hidden;
+    width: 200px;
+    //flex-grow: 0;
+    //grid-area: sidebar;
+    //height: 98vh;
+    background-color: $color0;
+    font-size: 14px;
+    line-height: 14px;
+    /*min-width: 200px;*/
+    padding: 8px 24px 8px 0;
+    color: white;
+    flex-grow: 0;
+    flex-shrink: 0;
+    z-index: 99;
+}
+
+.sidebar .menu {
+    margin: 36px 0;
+}
+
+.sidebar.collapsed .menu {
+    margin: 0;
+}
+
+.sidebar a {
+    padding: 0 8px;
+    margin: 32px 0;
+    display: flex;
+    text-decoration: none;
+
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 16px;
+    align-items: center;
+    color: white;
+}
+
+.sidebar a:hover {
+    background-color: $color1;
+}
+
+.sidebar a.active {
+    pointer-events: none;
+    color: $color1;
+    background-color: white;
+}
+
+.sidebar a svg {
+    margin: 10px;
+}
+
+.sidebar {
+    width: 200px;
+}
+
+.sidebar.collapsed {
+    width: 64px;
+}
