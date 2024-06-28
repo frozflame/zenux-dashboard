@@ -3,7 +3,6 @@ dist/main.js
 dist/main.js.LICENSE.txt
 example.json
 *storybook.log
-public/zenux-dashboard-demo.css
-public/zenux-dashboard-demo.css.map
-public/zenux-dashboard-demo.js
+public/main.js
+public/main.js.map
 _local/

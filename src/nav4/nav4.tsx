@@ -1,6 +1,6 @@
 import React from "react";
 import "./nav4.scss";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 
 interface Nav4ExitProps {
@@ -73,12 +73,14 @@ interface Nav4TrunkItemProps {
     clientSideRouting?: boolean;
 }
 
+
 function Nav4TrunkItem(props: Nav4TrunkItemProps) {
-    const targetUrl = new URL(props.href, window.location.origin);
-    const className = targetUrl.pathname === props.href ? "active" : "";
     if (props.clientSideRouting) {
-        return <Link to={props.href} target={props.target} className={className}>{props.title}</Link>;
+        const className = ({isActive}: { isActive: boolean }) => isActive ? "active" : "";
+        return <NavLink to={props.href} target={props.target} className={className}>{props.title}</NavLink>;
     } else {
+        const targetUrl = new URL(props.href, window.location.origin);
+        const className = targetUrl.pathname === props.href ? "active" : "";
         return <a href={props.href} target={props.target} className={className}>{props.title}</a>;
     }
 }

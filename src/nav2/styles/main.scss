@@ -1,0 +1,15 @@
+.zenux-dashboard-nav2 {
+    width: 200px;
+    height: 100vh;
+    z-index: 222;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #001529;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+
+    @import "nav2";
+}

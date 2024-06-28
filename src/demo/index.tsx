@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter, Link, RouterProvider} from "react-router-dom";
-import {Nav4Page, nav4Props} from "./demo_nav4";
-import {Dashboard1Demo} from "./demo_dashboard1";
+import {Nav4Page, nav4Props} from "./_nav4";
+import {Dashboard1Demo} from "./_dashboard1";
+import {Nav2Demo, Nav2DemoProps} from "../nav2/nav2";
+import nav2DemoProps from "./data_nav2.json";
 import "./demo.css";
+
+const _nav2DemoProps = nav2DemoProps as Nav2DemoProps;
 
 
 function DemoList() {
@@ -11,6 +15,9 @@ function DemoList() {
         <ul>
             <li>
                 <Link to="/dashboard1">Dashboard1</Link>
+            </li>
+            <li>
+                <Link to="/nav2">Nav2</Link>
             </li>
             <li>
                 <Link to="/nav4/north">Nav4</Link>
@@ -21,8 +28,6 @@ function DemoList() {
         </ul>
     </nav>
 }
-
-
 
 
 const router = createBrowserRouter([
@@ -55,6 +60,10 @@ const router = createBrowserRouter([
                 element: <p>settings</p>,
             },
         ]
+    },
+    {
+        path: "/nav2",
+        element: <Nav2Demo {..._nav2DemoProps}/>
     },
     {
         path: "/nav4/north",

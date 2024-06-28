@@ -1,0 +1,8 @@
+changelog
+---------
+
+ver 0.1.3
+* add Nav2
+* add Icon
+* add changelog.txt
+* use webpack for dev, rollup for dist
