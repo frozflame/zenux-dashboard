@@ -1,5 +1,4 @@
 import {Dashboard1, MenuItemProps} from "../dashboard1/dashboard1";
-import {Outlet} from "react-router-dom";
 import React from "react";
 
 export const menuItems: MenuItemProps[] = [
@@ -34,8 +33,8 @@ export function Dashboard1Demo() {
     return (
         <div className="app">
             <Dashboard1 menuItems={menuItems} title="Dashboard">
-                <Outlet/>
+                <div>content</div>
             </Dashboard1>
         </div>
-    );
+    )
 }

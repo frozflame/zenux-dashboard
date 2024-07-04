@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {createBrowserRouter, Link, RouterProvider} from "react-router-dom";
 import {Nav4Page, nav4Props} from "./_nav4";
 import {Dashboard1Demo} from "./_dashboard1";
 import {Nav2Demo, Nav2DemoProps} from "../nav2/nav2";
@@ -14,82 +13,52 @@ function DemoList() {
     return <nav>
         <ul>
             <li>
-                <Link to="/dashboard1">Dashboard1</Link>
+                <a href="/dashboard1">Dashboard1</a>
             </li>
             <li>
-                <Link to="/nav2">Nav2</Link>
+                <a href="/nav2">Nav2</a>
             </li>
             <li>
-                <Link to="/nav4/north">Nav4</Link>
+                <a href="/nav4/north">Nav4</a>
             </li>
             <li>
-                <Link to="/login">Login</Link>
+                <a href="/login">Login</a>
             </li>
         </ul>
     </nav>
 }
 
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <DemoList/>,
-    },
-    {
-        path: "/dashboard1",
-        element: <Dashboard1Demo></Dashboard1Demo>,
-        children: [
-            {
-                path: "/dashboard1/tasks",
-                element: <p>tasks</p>,
-            },
-            {
-                path: "/dashboard1/analyses",
-                element: <p>analyses</p>,
-            },
-            {
-                path: "/dashboard1/reports",
-                element: <p>reports</p>,
-            },
-            {
-                path: "/dashboard1/statistics",
-                element: <p>statistics</p>,
-            },
-            {
-                path: "/dashboard1/settings",
-                element: <p>settings</p>,
-            },
-        ]
-    },
-    {
-        path: "/nav2",
-        element: <Nav2Demo {..._nav2DemoProps}/>
-    },
-    {
-        path: "/nav4/north",
-        element: <Nav4Page nav4Props={nav4Props}>North</Nav4Page>
-    },
-    {
-        path: "/nav4/south",
-        element: <Nav4Page nav4Props={nav4Props}>South</Nav4Page>
-    },
-    {
-        path: "/nav4/east",
-        element: <Nav4Page nav4Props={nav4Props}>East</Nav4Page>
-    },
-    {
-        path: "/nav4/west",
-        element: <Nav4Page nav4Props={nav4Props}>West</Nav4Page>
-    },
-]);
-
-
-// const rootElement = document.getElementById("root");
-// const reactRoot = ReactDOM.createRoot(rootElement);
 export default function App() {
-    return <React.StrictMode>
-        <RouterProvider router={router}/>
-    </React.StrictMode>
+    switch (window.location.pathname) {
+        case  "/":
+            return <DemoList/>
+        case "/dashboard1":
+            return <Dashboard1Demo/>
+        case  "/dashboard1/tasks":
+            return <p>tasks</p>
+        case  "/dashboard1/analyses":
+            return <p>analyses</p>
+        case  "/dashboard1/reports":
+            return <p>reports</p>
+        case  "/dashboard1/statistics":
+            return <p>statistics</p>
+        case  "/dashboard1/settings":
+            return <p>settings</p>
+        case "/nav2":
+            return <Nav2Demo {..._nav2DemoProps}/>
+        case "/nav4/north":
+            return <Nav4Page nav4Props={nav4Props}>North</Nav4Page>
+        case"/nav4/south":
+            return <Nav4Page nav4Props={nav4Props}>South</Nav4Page>
+        case"/nav4/east":
+            return <Nav4Page nav4Props={nav4Props}>East</Nav4Page>
+        case"/nav4/west":
+            return <Nav4Page nav4Props={nav4Props}>West</Nav4Page>
+        default:
+            return <div>wrong url</div>
+
+    }
 }
 
 
