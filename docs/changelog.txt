@@ -1,6 +1,9 @@
 changelog
 ---------
 
+ver 0.1.4
+* add APIKit, Notificator, APIResponseDict, Userinfo
+
 ver 0.1.3
 * add Nav2
 * add Icon
