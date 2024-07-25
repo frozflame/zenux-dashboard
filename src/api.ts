@@ -81,6 +81,11 @@ export class APIKit {
         return json;
     }
 
+    async loadData(url: string, data?: any, loading?: boolean) {
+        const json = await this.request(url);
+        return json.data;
+    }
+
     getUserinfoURL() {
         return '/api/userinfo';
     }

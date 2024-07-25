@@ -1,6 +1,11 @@
 changelog
 ---------
 
+ver 0.2.1
+* add ModalDialog
+* add APIKit.loadData()
+
+
 ver 0.2.0
 * remove dependency "react-router-dom"
 

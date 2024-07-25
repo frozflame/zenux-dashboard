@@ -1,4 +1,4 @@
 zenux-dashboard
 ===============
 
-some practical React components for dashboard apps
+utilities and react components for dashboard apps
