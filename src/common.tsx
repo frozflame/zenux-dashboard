@@ -15,6 +15,3 @@ export function Icon({name}: IconProps) {
     return <i className={name}></i>
 }
 
-export interface Reference {
-    current: any;
-}
