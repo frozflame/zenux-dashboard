@@ -3,10 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import {Nav4Page, nav4Props} from "./_nav4";
 import {Dashboard1Demo} from "./_dashboard1";
-import {Nav2Demo, Nav2DemoProps} from "../nav2/nav2";
-import nav2DemoProps from "./data_nav2.json";
 
-const _nav2DemoProps = nav2DemoProps as Nav2DemoProps;
 
 function DemoList() {
     return <nav>
@@ -44,8 +41,6 @@ export default function App() {
             return <p>statistics</p>
         case  "/dashboard1/settings":
             return <p>settings</p>
-        case "/nav2":
-            return <Nav2Demo {..._nav2DemoProps}/>
         case "/nav4/north":
             return <Nav4Page nav4Props={nav4Props}>North</Nav4Page>
         case "/nav4/south":
@@ -56,7 +51,6 @@ export default function App() {
             return <Nav4Page nav4Props={nav4Props}>West</Nav4Page>
         default:
             return <div>wrong url</div>
-
     }
 }
 
