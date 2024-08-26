@@ -1,6 +1,10 @@
 Changes of zenux-dashboard
 --------------------------
 
+ver 0.3.1
+* nav4 action: n, p, t, z
+* nav4 icons
+
 ver 0.3.0
 * remove form1 and modal (use zenux-form instead)
 

@@ -10,14 +10,16 @@ export const nav4Props: Nav4Props = {
         text: "MENU",
         actions: [
             {
-                name: "Confirm",
-                type: "",
-                verb: "confirm",
+                name: "confirm",
+                params: [],
+                title: "Confirm",
+                zone: "api",
             },
             {
-                name: "Reject",
-                type: "",
-                verb: "reject",
+                name: "reject",
+                params: [],
+                title: "Reject",
+                zone: "api",
             }
         ],
     },

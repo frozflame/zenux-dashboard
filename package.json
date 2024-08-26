@@ -1,6 +1,6 @@
 {
     "name": "zenux-dashboard",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "utilities and react components for dashboard apps",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -15,6 +15,9 @@
         "navigation",
         "react"
     ],
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
     "devDependencies": {
         "@babel/cli": "^7.23.0",
         "@babel/core": "^7.23.0",
@@ -52,14 +55,18 @@
         "ts-loader": "^9.5.1",
         "typescript": "^5.4.3",
         "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^4.15.1"
+        "webpack-dev-server": "^4.15.1",
+        "@fortawesome/fontawesome-svg-core": "^6.6.0",
+        "@fortawesome/free-regular-svg-icons": "^6.6.0",
+        "@fortawesome/free-solid-svg-icons": "^6.6.0",
+        "@fortawesome/react-fontawesome": "^0.2.2"
     },
     "dependencies": {
         "@types/react": "^18.3.2",
         "@types/react-dom": "^18.3.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "zenux": "^0.3.0"
+        "zenux": "^0.3.1"
     },
     "scripts": {
         "rollup": "rollup -c --bundleConfigAsCjs",
@@ -67,7 +74,7 @@
         "build": "rollup -c --bundleConfigAsCjs",
         "bundle": "rollup -c --bundleConfigAsCjs",
         "dist": "rollup -c --bundleConfigAsCjs; npm pack; mv -f zenux-dashboard-0.*.*.tgz /data/setup/js",
-        "start": "webpack-dev-server --host 0.0.0.0 .",
+        "start": "webpack-dev-server --host 0.0.0.0",
         "test": "echo \"Error: no test specified\" && exit 1"
     }
 }
