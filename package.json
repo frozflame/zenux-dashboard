@@ -1,6 +1,6 @@
 {
     "name": "zenux-dashboard",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "description": "utilities and react components for dashboard apps",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -28,6 +28,10 @@
         "@babel/runtime": "^7.23.1",
         "@emotion/react": "^11.11.4",
         "@emotion/styled": "^11.11.5",
+        "@fortawesome/fontawesome-svg-core": "^6.6.0",
+        "@fortawesome/free-regular-svg-icons": "^6.6.0",
+        "@fortawesome/free-solid-svg-icons": "^6.6.0",
+        "@fortawesome/react-fontawesome": "^0.2.2",
         "@rollup/plugin-babel": "^6.0.4",
         "@rollup/plugin-commonjs": "^25.0.7",
         "@rollup/plugin-node-resolve": "^15.2.3",
@@ -43,6 +47,7 @@
         "eslint-plugin-jest": "^27.4.2",
         "live-server": "^1.2.2",
         "path": "^0.12.7",
+        "react-router-dom": "^6.26.1",
         "rollup": "^4.17.2",
         "rollup-plugin-dts": "^6.1.0",
         "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -56,17 +61,19 @@
         "typescript": "^5.4.3",
         "webpack-cli": "^5.1.4",
         "webpack-dev-server": "^4.15.1",
-        "@fortawesome/fontawesome-svg-core": "^6.6.0",
-        "@fortawesome/free-regular-svg-icons": "^6.6.0",
-        "@fortawesome/free-solid-svg-icons": "^6.6.0",
-        "@fortawesome/react-fontawesome": "^0.2.2"
+        "zenux-grid": "^0.3.3"
     },
     "dependencies": {
         "@types/react": "^18.3.2",
         "@types/react-dom": "^18.3.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "react-router-dom": "^6.26.1",
         "zenux": "^0.3.1"
+    },
+    "peerDependencies": {
+        "react-router-dom": "^6.26.1",
+        "zenux-grid": "^0.3.3"
     },
     "scripts": {
         "rollup": "rollup -c --bundleConfigAsCjs",

@@ -1,5 +1,6 @@
-import React, {ReactNode} from "react";
+import React, {ReactNode, createContext, useContext} from "react";
 import "./nav4.scss";
+import {NavLink} from "react-router-dom";
 
 
 interface Nav4ExitProps {
@@ -16,6 +17,15 @@ export interface Action {
     zone: string;
 }
 
+
+async function _performAction(action: Action) {
+    console.log('_performAction: do nothing with', action);
+}
+
+
+export const Nav4ActionContext = createContext(_performAction);
+
+
 interface Nav4MenuProps {
     icon?: ReactNode;
     text: string;
@@ -28,41 +38,27 @@ export interface Nav4Props {
     menu: Nav4MenuProps;
     title: string;
     trunk: Nav4TrunkItemProps[];
-    handleNav4Action?: (action: Action) => void;
 }
 
 
 interface MenuItemProps {
     action: Action,
-    handleNav4Action?: (action: Action) => void;
-}
-
-declare global {
-    interface Window {
-        handleNav4Action?: (action: Action) => void;
-    }
-}
-
-function _handleNav4Action(action: Action) {
-    console.log('_handleNav4Action:', action);
 }
 
 function MenuItem(props: MenuItemProps) {
+    const {name, title, params} = props.action;
+    const performAction = useContext(Nav4ActionContext);
+
     function handleClick(event: React.MouseEvent<HTMLElement>) {
         event.preventDefault();
         event.stopPropagation();
-        let handleNav4Action;
-        if (props.handleNav4Action) {
-            handleNav4Action = props.handleNav4Action;
-        } else if (window.handleNav4Action) {
-            handleNav4Action = window.handleNav4Action;
-        } else {
-            handleNav4Action = _handleNav4Action;
-        }
-        handleNav4Action(props.action);
+        performAction(props.action).catch(console.error);
     }
 
-    return <a href="#" onClick={handleClick}>{props.action.title}</a>
+    if (name === "link") {
+        return <a href={params[0]} target={params[1]}>{title}</a>
+    }
+    return <a href="#" onClick={handleClick}>{title}</a>
 }
 
 
@@ -71,14 +67,22 @@ interface Nav4TrunkItemProps {
     href: string;
     title: string;
     target?: string;
+    clientSideRouting?: boolean;
 }
 
 
 function Nav4TrunkItem(props: Nav4TrunkItemProps) {
-    const targetUrl = new URL(props.href, window.location.origin);
-    const className = targetUrl.pathname === window.location.pathname ? "active" : "";
-    return <a href={props.href} target={props.target} className={className}>{props.title}</a>
+    if (props.clientSideRouting) {
+        const className = ({isActive}: {isActive: boolean}) => isActive ? "active" : "";
+        // return <NavLink to={props.href} target={props.target} className={className} preventScrollReset={true}>{props.title}</NavLink>;
+        return <NavLink to={props.href} target={props.target} className={className}>{props.title}</NavLink>;
+    } else {
+        const targetUrl = new URL(props.href, window.location.origin);
+        const className = targetUrl.pathname === window.location.pathname ? "active" : "";
+        return <a href={props.href} target={props.target} className={className}>{props.title}</a>
+    }
 }
+
 
 export function Nav4Trunk(props: Nav4Props) {
     let navElements = props.trunk.map(
@@ -94,7 +98,7 @@ export function Nav4Menu(props: Nav4Props) {
     const {text, actions} = props.menu;
     let actionElements = actions.map(
         (action, idx) =>
-            <MenuItem key={idx} action={action} handleNav4Action={props.handleNav4Action}/>
+            <MenuItem key={idx} action={action}/>
     );
     return <div className="dropdown">
         <a className="broad" href="#">{text}
