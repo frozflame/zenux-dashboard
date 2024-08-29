@@ -14,4 +14,3 @@ export function Icon({name}: IconProps) {
     }
     return <i className={name}></i>
 }
-

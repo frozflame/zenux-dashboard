@@ -2,6 +2,32 @@ html, body {
     margin: 0;
 }
 
-.zenux-dashboard-nav2 {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0 !important;
+}
+
+.body-content {
+    width: 100%;
+    display: flex;
+
+    > .left {
+        width: 200px;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    > .right {
+        width: 100%;
+        padding: 10px 20px;
+    }
+}
+
+.zenux-grid div.table {
+    width: calc(100vw - 240px) !important;
 }

@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import {Nav4Page, nav4Props} from "./_nav4";
 import {Dashboard1Demo} from "./_dashboard1";
+import {Board} from "./app";
 
 
 function DemoList() {
@@ -29,6 +30,8 @@ export default function App() {
     switch (window.location.pathname) {
         case  "/":
             return <DemoList/>
+        case "/board":
+            return <Board/>
         case "/dashboard1":
             return <Dashboard1Demo/>
         case  "/dashboard1/tasks":

@@ -1,6 +1,10 @@
 Changes of zenux-dashboard
 --------------------------
 
+ver 0.3.3
+* export Nav4ActionContext
+* add demo Board -- towards a web app integrating zenux-* and others
+
 ver 0.3.2
 * nav4: use react context api
 

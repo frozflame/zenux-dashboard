@@ -1,4 +1,5 @@
 import {encodeURL, inferFetchOptions} from "zenux";
+import {PageData, QueryParams, translateQueryParams, untranslatePageData} from "zenux-grid";
 
 export interface APIResponseDict {
     code: number;
@@ -84,6 +85,14 @@ export class APIKit {
     async loadData(url: string, data?: any, loading?: boolean) {
         const json = await this.request(url);
         return json.data;
+    }
+
+    async queryPageData(subject: string, queryParams: QueryParams): Promise<PageData> {
+        const apiQueryParams = translateQueryParams(queryParams);
+        const keyword = encodeURIComponent(apiQueryParams.keyword || "");
+        const qs = `limit=${apiQueryParams.limit}&skip=${apiQueryParams.skip}&keyword=${keyword}`;
+        const url = `/api/search/${subject}?${qs}`;
+        return untranslatePageData(await this.loadData(url), queryParams.pageSize);
     }
 
     getUserinfoURL() {

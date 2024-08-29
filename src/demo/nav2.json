@@ -1,0 +1,75 @@
+{
+    "head": {
+        "title": "zenux-dashboard",
+        "version": "v0.3",
+        "homepage": "/"
+    },
+    "foot": [
+        {
+            "text": "somebody",
+            "items": [
+                {
+                    "text": "reset-password",
+                    "href": "#"
+                },
+                {
+                    "text": "logout",
+                    "href": "#"
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "items": [
+                {
+                    "href": "/nav4/north",
+                    "text": "Nav4 North"
+                },
+                {
+                    "href": "/nav4/south",
+                    "text": "Nav4 South"
+                },
+                {
+                    "href": "/nav4/east",
+                    "text": "Nav4 East"
+                },
+                {
+                    "href": "/nav4/west",
+                    "text": "Nav4 West"
+                },
+                {
+                    "href": "/dashboard1",
+                    "text": "Dashboard1"
+                }
+            ],
+            "text": "Demos"
+        },
+        {
+            "items": [
+                {
+                    "href": "#",
+                    "text": "Analyses"
+                },
+                {
+                    "href": "#",
+                    "text": "Reports"
+                }
+            ],
+            "text": "Tasks"
+        },
+        {
+            "items": [
+                {
+                    "href": "#",
+                    "text": "Users"
+                },
+                {
+                    "href": "#",
+                    "text": "Permissions"
+                }
+            ],
+            "text": "Settings"
+        }
+    ]
+}
