@@ -1,7 +1,9 @@
 import React, {CSSProperties} from "react";
-import {Action, Nav4, Nav4ActionContext, Nav4Props} from "../nav4/nav4";
+import {Nav4, Nav4Props} from "../nav4/nav4";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleLeft, faScrewdriverWrench} from "@fortawesome/free-solid-svg-icons";
+import {Action} from "../types";
+import {ActionContext} from "../actions";
 
 
 export const nav4Props: Nav4Props = {
@@ -18,11 +20,13 @@ export const nav4Props: Nav4Props = {
                 name: "confirm",
                 params: [],
                 title: "Confirm",
+                text: "Confirm",
                 zone: "api",
             },
             {
                 name: "reject",
                 params: [],
+                text: "Reject",
                 title: "Reject",
                 zone: "api",
             }
@@ -70,9 +74,9 @@ export function Nav4Page(props: nav4PageProps) {
         left: '0'
     };
     return <div>
-        <Nav4ActionContext.Provider value={performAction}>
+        <ActionContext.Provider value={performAction}>
             <Nav4 {...props.nav4Props}/>
-        </Nav4ActionContext.Provider>
+        </ActionContext.Provider>
         <div style={style}>{props.children}</div>
     </div>
 }

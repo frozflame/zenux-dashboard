@@ -1,6 +1,10 @@
 Changes of zenux-dashboard
 --------------------------
 
+ver 0.3.4
+* Action: add field 'text'
+* add ActionContext, remove Nav4ActionContext
+
 ver 0.3.3
 * export Nav4ActionContext
 * add demo Board -- towards a web app integrating zenux-* and others

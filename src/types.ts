@@ -5,6 +5,7 @@ export interface Reference {
 export interface Action {
     name: string;
     params: any;
+    text: string;
     title: string;
     zone: string;
 }

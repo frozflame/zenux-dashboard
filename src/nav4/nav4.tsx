@@ -1,6 +1,8 @@
-import React, {ReactNode, createContext, useContext} from "react";
-import "./nav4.scss";
+import React, {ReactNode, useContext} from "react";
 import {NavLink} from "react-router-dom";
+import {Action} from "../types";
+import {ActionContext} from "../actions";
+import "./nav4.scss";
 
 
 interface Nav4ExitProps {
@@ -9,21 +11,7 @@ interface Nav4ExitProps {
     href: string;
 }
 
-
-export interface Action {
-    name: string;
-    params: any;
-    title: string;
-    zone: string;
-}
-
-
-async function _performAction(action: Action) {
-    console.log('_performAction: do nothing with', action);
-}
-
-
-export const Nav4ActionContext = createContext(_performAction);
+export const Nav4ActionContext = ActionContext;
 
 
 interface Nav4MenuProps {
@@ -46,8 +34,8 @@ interface MenuItemProps {
 }
 
 function MenuItem(props: MenuItemProps) {
-    const {name, title, params} = props.action;
-    const performAction = useContext(Nav4ActionContext);
+    const {title, params, zone} = props.action;
+    const performAction = useContext(ActionContext);
 
     function handleClick(event: React.MouseEvent<HTMLElement>) {
         event.preventDefault();
@@ -55,7 +43,7 @@ function MenuItem(props: MenuItemProps) {
         performAction(props.action).catch(console.error);
     }
 
-    if (name === "link") {
+    if (zone === "link") {
         return <a href={params[0]} target={params[1]}>{title}</a>
     }
     return <a href="#" onClick={handleClick}>{title}</a>
