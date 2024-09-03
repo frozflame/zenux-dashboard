@@ -22,14 +22,14 @@ module.exports = {
          * the name of the output file
          */
         filename: "main.js",
-        publicPath: "/"
+        publicPath: "/",
     },
     /** "target"
      * setting "node" as target app (server side), and setting it as "web" is
      * for browser (client side). Default is "web"
      */
     target: "web",
-    devtool : "source-map",
+    devtool: "source-map",
     devServer: {
         /** "port"
          * port of dev server
@@ -55,8 +55,8 @@ module.exports = {
          */
         liveReload: true,
         proxy: {
-            '/api': 'http://127.0.0.1:5700',
-            '/test-api': 'http://127.0.0.1:5005',
+            "/api": "http://127.0.0.1:3990",
+            "/test-api": "http://127.0.0.1:5005",
         },
     },
     resolve: {
@@ -65,7 +65,7 @@ module.exports = {
          * resolve the one with the extension listed first in the array and skip the rest.
          * This is what enables users to leave off the extension when importing
          */
-        extensions: ['.js', '.jsx', '.json', '.tsx', '.ts']
+        extensions: [".js", ".jsx", ".json", ".tsx", ".ts"],
     },
     module: {
         /** "rules"
@@ -77,7 +77,7 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
+                use: "ts-loader",
                 exclude: /node_modules/,
             },
             {
@@ -96,15 +96,15 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(js|jsx)$/,    //kind of file extension this rule should look for and apply in test
+                test: /\.(js|jsx)$/, //kind of file extension this rule should look for and apply in test
                 exclude: /node_modules/, //folder to be excluded
-                use: 'babel-loader' //loader which we are going to use
-            }
-        ]
+                use: "babel-loader", //loader which we are going to use
+            },
+        ],
     },
     performance: {
         hints: false,
         maxEntrypointSize: 512000,
-        maxAssetSize: 512000
-    }
-}
+        maxAssetSize: 512000,
+    },
+};

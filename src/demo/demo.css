@@ -29,5 +29,5 @@ body {
 }
 
 .zenux-grid div.table {
-    width: calc(100vw - 240px) !important;
+    width: calc(100vw - 200px) !important;
 }

@@ -1,10 +1,11 @@
-import "./demo.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {Nav4Page, nav4Props} from "./_nav4";
 import {Dashboard1Demo} from "./_dashboard1";
 import {Board} from "./app";
+import {Nav1Demo} from "../nav1/demo";
 
+// import "./demo.css";
 
 function DemoList() {
     return <nav>
@@ -25,7 +26,6 @@ function DemoList() {
     </nav>
 }
 
-
 export default function App() {
     switch (window.location.pathname) {
         case  "/":
@@ -44,6 +44,10 @@ export default function App() {
             return <p>statistics</p>
         case  "/dashboard1/settings":
             return <p>settings</p>
+        case "/nav1/project":
+            return <Nav1Demo/>
+        case "/nav1/user":
+            return <Nav1Demo/>
         case "/nav4/north":
             return <Nav4Page nav4Props={nav4Props}>North</Nav4Page>
         case "/nav4/south":

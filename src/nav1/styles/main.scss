@@ -1,0 +1,115 @@
+@import "color";
+
+.nav1-outer {
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.nav1-inner {
+    font-size: 16px;
+    line-height: 16px;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: visible;
+    background-color: $color-bg;
+    //padding: 8px 24px 8px 0;
+    color: $color-fg;
+    flex-grow: 0;
+    flex-shrink: 0;
+    z-index: 99;
+
+    &.collapsed {
+        width: 64px;
+    }
+
+    &.collapsed .navitems {
+        margin: 0;
+    }
+
+    div.strip {
+        padding-right: 16px;
+    }
+
+    .navitems {
+        margin: 36px 0;
+    }
+
+    .strip {
+        margin: 32px 0;
+    }
+
+    a.navitem {
+        padding: 0 8px;
+        display: flex;
+        text-decoration: none;
+        border-top-right-radius: 22px;
+        border-bottom-right-radius: 22px;
+        vertical-align: middle;
+        align-items: center;
+        color: $color-fg;
+    }
+
+    a.navitem:hover {
+        background-color: $color-hover;
+    }
+
+    a.navitem.active {
+        pointer-events: none;
+        color: $color-bg;
+        background-color: $color-fg;
+    }
+
+    a svg {
+        margin: 10px;
+    }
+
+    .label {
+        margin-right: 10px;
+    }
+
+    .foot {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .menuitems {
+        width: 100%;
+
+        @import "menu";
+    }
+}
+
+
+@media (max-width: 960px) {
+    .nav1-outer {
+        width: 60px;
+
+        .nav1-inner {
+            width: 60px;
+
+            div.strip {
+                padding-right: 4px;
+            }
+
+            .hide-on-collapse {
+                display: none;
+            }
+
+            .menuitems > ul > li > a > .label {
+                display: none;
+            }
+
+            .menuitems > ul > li > a > .nonleaf {
+                display: none;
+            }
+
+            li ul {
+                left: 60px;
+                width: 200px;
+            }
+        }
+    }
+}

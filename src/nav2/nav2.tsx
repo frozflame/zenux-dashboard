@@ -1,53 +1,7 @@
 import React, {ReactNode} from "react";
-import {Icon} from "../common";
 import "./styles/main.scss"
+import {Menu, MenuItemProps} from "./menu";
 
-export interface MenuItemProps {
-    text: string;
-    href?: string;
-    icon?: string;
-    items?: MenuItemProps[];
-}
-
-
-export interface MenuProps {
-    items?: MenuItemProps[];
-}
-
-
-export function MenuItem({text, href, icon, items}: MenuItemProps) {
-    let name: string = text;
-    if (text.length > 16) {
-        name = text.slice(0, 16) + '...'
-    }
-    return <li>
-        <a href={href} title={text}>
-            <span>
-                <Icon name={icon}/>
-                {name}
-            </span>
-            <NonleafIndicator items={items}/></a>
-        <Menu items={items}/>
-    </li>
-}
-
-function NonleafIndicator({items}: MenuProps) {
-    if (!items || items.length === 0) {
-        return <></>
-    }
-    return <span className="nonleaf">{">"}</span>
-}
-
-
-export function Menu({items}: MenuProps) {
-    if (!items || items.length === 0) {
-        return <></>
-    }
-    const menuItems = items.map((item, idx) => {
-        return <MenuItem {...item} key={idx}/>
-    })
-    return <ul>{menuItems}</ul>
-}
 
 export interface Nav2Props {
     items: MenuItemProps[],

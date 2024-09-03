@@ -1,6 +1,10 @@
 Changes of zenux-dashboard
 --------------------------
 
+ver 0.3.5
+* add Nav1
+* start using prettier for code formatting
+
 ver 0.3.4
 * Action: add field 'text'
 * add ActionContext, remove Nav4ActionContext

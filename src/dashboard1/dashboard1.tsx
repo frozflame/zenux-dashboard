@@ -30,7 +30,7 @@ export function Dashboard1(props: DashboardProps) {
     return <div className="zenux-dashboard dashboard1">
         <div className="sidebar">
             <div className="sidebar-header hide-on-collapse">{props.title}</div>
-            <div className="menu">
+            <div className="navitems">
                 {props.menuItems.map((props, idx) => <MenuItem key={idx} {...props}/>)}
             </div>
         </div>
