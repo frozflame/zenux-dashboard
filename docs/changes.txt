@@ -1,6 +1,10 @@
 Changes of zenux-dashboard
 --------------------------
 
+ver 0.3.6
+* add MenuItemProps.onClick
+* fmt code with prettier
+
 ver 0.3.5
 * add Nav1
 * start using prettier for code formatting

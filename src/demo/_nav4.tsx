@@ -1,20 +1,22 @@
-import React, {CSSProperties} from "react";
-import {Nav4, Nav4Props} from "../nav4/nav4";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCircleLeft, faScrewdriverWrench} from "@fortawesome/free-solid-svg-icons";
-import {Action} from "../types";
-import {ActionContext} from "../actions";
-
+import React, { CSSProperties } from "react";
+import { Nav4, Nav4Props } from "../nav4/nav4";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faCircleLeft,
+    faScrewdriverWrench,
+} from "@fortawesome/free-solid-svg-icons";
+import { Action } from "../types";
+import { ActionContext } from "../actions";
 
 export const nav4Props: Nav4Props = {
     exit: {
         href: "/",
-        icon: <FontAwesomeIcon icon={faCircleLeft}/>,
+        icon: <FontAwesomeIcon icon={faCircleLeft} />,
         text: "Exit",
     },
     menu: {
         text: "MENU",
-        icon: <FontAwesomeIcon icon={faScrewdriverWrench}/>,
+        icon: <FontAwesomeIcon icon={faScrewdriverWrench} />,
         actions: [
             {
                 name: "confirm",
@@ -29,7 +31,7 @@ export const nav4Props: Nav4Props = {
                 text: "Reject",
                 title: "Reject",
                 zone: "api",
-            }
+            },
         ],
     },
     title: "Review",
@@ -53,9 +55,9 @@ export const nav4Props: Nav4Props = {
             chapter: "west",
             href: "/nav4/west",
             title: "West",
-        }
-    ]
-}
+        },
+    ],
+};
 
 interface nav4PageProps {
     nav4Props: Nav4Props;
@@ -63,20 +65,21 @@ interface nav4PageProps {
 }
 
 async function performAction(action: Action) {
-    console.log('performAction', action);
+    console.log("performAction", action);
 }
-
 
 export function Nav4Page(props: nav4PageProps) {
     const style: CSSProperties = {
-        position: 'absolute',
-        bottom: '0',
-        left: '0'
+        position: "absolute",
+        bottom: "0",
+        left: "0",
     };
-    return <div>
-        <ActionContext.Provider value={performAction}>
-            <Nav4 {...props.nav4Props}/>
-        </ActionContext.Provider>
-        <div style={style}>{props.children}</div>
-    </div>
+    return (
+        <div>
+            <ActionContext.Provider value={performAction}>
+                <Nav4 {...props.nav4Props} />
+            </ActionContext.Provider>
+            <div style={style}>{props.children}</div>
+        </div>
+    );
 }

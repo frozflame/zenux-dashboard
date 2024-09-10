@@ -1,4 +1,4 @@
-import {Dashboard1, MenuItemProps} from "../dashboard1/dashboard1";
+import { Dashboard1, MenuItemProps } from "../dashboard1/dashboard1";
 import React from "react";
 
 export const menuItems: MenuItemProps[] = [
@@ -27,7 +27,7 @@ export const menuItems: MenuItemProps[] = [
         text: "Settings",
         // icon: <SettingsIcon/>,
     },
-]
+];
 
 export function Dashboard1Demo() {
     return (
@@ -36,5 +36,5 @@ export function Dashboard1Demo() {
                 <div>content</div>
             </Dashboard1>
         </div>
-    )
+    );
 }
