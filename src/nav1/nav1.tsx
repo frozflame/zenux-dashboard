@@ -25,16 +25,17 @@ function NavItem(props: Nav1NavItemProps) {
 }
 
 export interface Nav1Props {
-    title: string;
+    title?: string | ReactNode;
+    header?: ReactNode;
     navItems: Nav1NavItemProps[];
     menuItems: MenuProps;
 }
 
-export function Nav1({ navItems, menuItems, title }: Nav1Props) {
+export function Nav1({ header, navItems, menuItems, title }: Nav1Props) {
     return (
         <div className="nav1-outer">
             <div className="nav1-inner">
-                <div className="nav1-header">{title}</div>
+                <div className="nav1-header">{header || title || "?"}</div>
                 <div className="navitems">
                     {navItems.map((props, idx) => (
                         <NavItem key={idx} {...props} />
