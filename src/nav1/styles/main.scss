@@ -113,3 +113,35 @@
         }
     }
 }
+
+.nav1-header {
+    a {
+        display: flex;
+        padding: 0 8px;
+        align-items: center;
+        vertical-align: middle;
+    }
+
+    img {
+        width: 16px;
+        height: 16px;
+        margin: 10px
+    }
+
+    span {
+        display: inline-block;
+    }
+}
+
+//.hide-on-collapse {
+//    outline: 1px solid red;
+//}
+
+
+//svg {
+//    outline: 1px solid black;
+//}
+//
+//img {
+//    outline: 1px solid black;
+//}

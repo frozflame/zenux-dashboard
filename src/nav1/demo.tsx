@@ -43,7 +43,12 @@ const menuProps: MenuProps = {
 export function Nav1Demo() {
     return (
         <div className="app">
-            <Nav1 title="ZD" navItems={navItems} menuItems={menuProps} />
+            <Nav1
+                logo="/icon1.png"
+                title="Dashboard"
+                navItems={navItems}
+                menuItems={menuProps}
+            />
             <div>content</div>
         </div>
     );

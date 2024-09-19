@@ -25,17 +25,22 @@ function NavItem(props: Nav1NavItemProps) {
 }
 
 export interface Nav1Props {
-    title?: string | ReactNode;
-    header?: ReactNode;
+    logo: string;
+    title: string;
     navItems: Nav1NavItemProps[];
     menuItems: MenuProps;
 }
 
-export function Nav1({ header, navItems, menuItems, title }: Nav1Props) {
+export function Nav1({ logo, title, navItems, menuItems }: Nav1Props) {
     return (
         <div className="nav1-outer">
             <div className="nav1-inner">
-                <div className="nav1-header">{header || title || "?"}</div>
+                <div className="nav1-header">
+                    <a>
+                        <img src={logo} alt="" />
+                        <span className="label hide-on-collapse">{title}</span>
+                    </a>
+                </div>
                 <div className="navitems">
                     {navItems.map((props, idx) => (
                         <NavItem key={idx} {...props} />

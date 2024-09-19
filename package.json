@@ -1,6 +1,6 @@
 {
     "name": "zenux-dashboard",
-    "version": "0.3.7",
+    "version": "0.4.0",
     "description": "utilities and react components for dashboard apps",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",

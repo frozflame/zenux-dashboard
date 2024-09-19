@@ -1,6 +1,9 @@
 Changes of zenux-dashboard
 --------------------------
 
+ver 0.4.0
+* Nav1Props: logo, title
+
 ver 0.3.6
 * add MenuItemProps.onClick
 * fmt code with prettier
